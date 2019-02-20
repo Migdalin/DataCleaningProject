@@ -14,7 +14,7 @@ The zip file contained the following primary files:
 * test and train subdirectories:
 	* X_...txt : An R data table file.  Experimental data.
 	* y_...txt : An R data table file.  Maps an activity to each row in the X_ dataset.
-	* subject_...txt : An R data table file.  Maps between a subject to each row in the X_ dataset
+	* subject_...txt : An R data table file.  Maps a subject to each row in the X_ dataset
 * Inertial Signals subdirectory
 	* Contains additional data files, which were not used in this analysis.
 

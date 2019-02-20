@@ -1,7 +1,7 @@
 # Cleaning Data Project
 
 
-This is the final project for the "Getting and Cleaning Data" course [Project Description](https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project).  While it
+This is the final project for the "Getting and Cleaning Data" course.  While it
  saddens us to have to depart, we have six more courses to look forward to!  So, as Churchill once said, this is not the end.  It is not even the beginning of the end, though it is perhaps the end of the beginning.
 
 
