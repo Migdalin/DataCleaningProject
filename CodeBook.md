@@ -26,13 +26,13 @@ The zip file contained the following primary files:
 
 ## Analysis
 __Output results are contained here__:
-* tidyData.txt:  An R data table file.  This can be perused from the R prompt via "read.file('tidyData.txt')"
+* tidyData.txt:  An R data table file.  Note that, because the instructions were to set "row.names=FALSE" when exporting this data, the nice column names will not be visible if this file is read back in via read.table().  You will, however, see the wonderful column names if you view this file directly on GitHub.
 	* This file consists of 180 rows, each with 563 columns
 	* The "activity" and "subject" columns served as the primary "group by" columns.
 	* The remaining columns represent the mean value of measurements for the associated activity and subject.
 
 __All steps performed upon the data are contained here__:
-* run_analysis.R:  The entry point for this script is the function "AssignmentMain()."  Running that method inside R will download the zip file and perform all analysis steps, in the order in which they were originally performed, and will generate a new tidyData.rTableData output file.
+* run_analysis.R:  The entry point for this script is the function "AssignmentMain()."  Running that method inside R will download the zip file and perform all analysis steps, in the order in which they were originally performed, and will generate a new tidyData.txt output file.
 
 ### Steps Performed
 * Column names for the test and training data files (561 columns) was read in from the "features.txt" file.  This file contained two separate columns, "V1" serving as the ordinal location of the column, with "V2" being the name of the column.
@@ -41,8 +41,8 @@ __All steps performed upon the data are contained here__:
 	* Originally, we converted the column names to all lowercase letters, but this rendered them much more difficult to read, so this step was later abandoned in favor of camel casing.
 	* Similarly, we made an attempt to expand various abbreviations used in the original column names.  However, this resulted in inordinately long and unwieldy column names.  As a result, we left the abbreviations alone.
 * The X_, y_, and subject_ files were concatenated, first for the test data, then for the training data.  The column name for the y_ data was changed to "activity," and for the subject_ data was changed to "subject."  Finally, the resulting combined data were merged into a single dataset.
-* The GetMeanAndStdMeasurements() metod from the run_analysis.R file retrieves only those columns containing the strings "std" or "mean"; that is, those columns containing standard deviation and mean measurements.  This data was not persisted, but can be accessed by running that method, passing it the merged dataset returned by the GetSingleMergedDataset() method.
-* Descriptive activity names were applied to the merged dataset, by reading in the "activity_labels.txt" file, and using the names from the $V2 column, minus any non-alphanumeric characters, in place of the activity ID values.
-* An independent tidy dataset was created, containing the average values for each measurement, grouped by activity and subject.  This dataset was then written out to "tidyData.rTableData."
+* The GetMeanAndStdMeasurements() metod from the run_analysis.R file retrieves only those columns containing the strings "std" or "mean"; that is, those columns containing standard deviation and mean measurements.
+* Descriptive activity names were applied to the filtered dataset from the previous step, by reading in the "activity_labels.txt" file, and using the names from the $V2 column, minus any non-alphanumeric characters, in place of the activity ID values.
+* An independent tidy dataset was created, containing the average values for each measurement, grouped by activity and subject.  This dataset was then written out to "tidyData.txt" using the row.names=FALSE, as directed.
 	* Our approach made use of the "melt" and "dcast" methods from the reshape2 package, varying first by activity and then by subject.
 

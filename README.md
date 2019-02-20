@@ -8,7 +8,7 @@ This is the final project for the "Getting and Cleaning Data" course.  While it
 
 ## Key Files
 * CodeBook.md:  Detailed information about the software and data used, as well as various assumptions and approaches taken while manipulating the data.
-* tidyData.rTableData:  The output data, consisting of mean values for all measurements, grouped by activity and subject.
+* tidyData.txt:  This is an R data table file, in spite of the misleading extension.  This file contains the output data, consisting of mean values for a filtered set of measurements (those involving standard deviation and mean observations), grouped by activity and subject.  Note that, because the instructions were to set "row.names=FALSE" when exporting this data, the nice column names will not be visible if this file is read back in via read.table().  This is sad, but we were merely following orders....  However, you should be able to see the wonderful column names if you view this file here on GitHub!
 * run_analysis.R:  The complete, unabridged script used to generate the output file
 
 
