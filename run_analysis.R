@@ -83,7 +83,7 @@ GetSingleMergedDataset <- function() {
 #  standard deviation for each measurement.
 # 
 GetMeanAndStdMeasurements <- function(mergedData) {
-    meanAndStd <- mergedData[,grepl("mean|std", colnames(mergedData))]
+    meanAndStd <- mergedData[,grepl("mean|std|subject|activity", colnames(mergedData))]
     return(meanAndStd)
 }
 
@@ -167,9 +167,8 @@ AssignmentMain <- function() {
     # names before splitting off a separate data set.
     meergedData <- ApplyDescriptiveActivityNames(mergedData)
     
-    # Step 2:  Sadly, this one appears to be abandoned shortly
-    # after birth.
-    meanAndStd <- GetMeanAndStdMeasurements(mergedData)
+    # Step 2:  Get filtered list of columns.
+    mergedData <- GetMeanAndStdMeasurements(mergedData)
     
     # Step 4
     mergedData <- AssignDescriptiveVariableNames(mergedData)
