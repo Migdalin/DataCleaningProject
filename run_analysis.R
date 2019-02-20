@@ -144,7 +144,7 @@ GetAverageByActivityAndSubject <- function(mergedData) {
 }
 
 WriteTidyData <- function(tidyData) {
-    write.table(tidyData, "tidyData.rTableData")
+    write.table(tidyData, "tidyData.txt", row.names = FALSE)
     invisible(NA)
 }
 

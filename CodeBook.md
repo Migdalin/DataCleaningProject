@@ -26,7 +26,7 @@ The zip file contained the following primary files:
 
 ## Analysis
 __Output results are contained here__:
-* tidyData.rTableData:  An R data table file.  This can be perused from the R prompt via "read.file('tidyData.rTableData')"
+* tidyData.txt:  An R data table file.  This can be perused from the R prompt via "read.file('tidyData.txt')"
 	* This file consists of 180 rows, each with 563 columns
 	* The "activity" and "subject" columns served as the primary "group by" columns.
 	* The remaining columns represent the mean value of measurements for the associated activity and subject.
